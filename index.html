@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&family=Noto+Sans&family=Nunito&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid justify-content-center text-center d-flex flex-column">
+            <div class="mb-2"><a class="navbar-brand" href="#">TypeRacer</a></div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#instructionsModal">
+                Instructions
+            </button>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="instructionsModal" tabindex="-1" aria-labelledby="instructionsModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="instructionsModalLabel">Instructions</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Here are the instructions for the game...</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="Game-area" class="container mt-3">
+        <div class="row mb-3">
+            <div class="col-md-8">
+                <div id="difficulty" class="col-sm-12 col-md-8">
+                    <form>
+                        <div class="row mb-3">
+                            <label for="difficulty" class="col-sm-4 col-form-label">Select difficulty:</label>
+                            <div class="col-sm-8">
+                                <select id="difficulty" name="difficulty" class="form-select">
+                                    <option value="Easy">Easy</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Hard">Hard</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="row mb-3 mt-3">
+                    <div class="col-sm-12 col-md-8">
+                        <h4>Test your typing speed by typing the text below the provided text box.</h4>
+                        <div class="mb-3 p-3 border" id="sample-text">
+                            The cat sat on the mat.
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3 mt-3">
+                    <div id="test-area" class="col-sm-12 col-md-8">
+                        <p id="challenge">This is a test text</p>
+                        <textarea id="text-input" class="form-control" rows="5"></textarea>
+                    </div>
+                </div>
+                <div class="row mb-3 justify-content-center">
+                    <div id="buttons" class="col-sm-12 col-md-8">
+                        <button id="start" class="btn btn-custom me-3">Start</button>
+                        <button id="stop" class="btn btn-custom me-3">Stop</button>
+                        <button id="reset" class="btn btn-custom">Reset</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div id="results">
+                    <p>Time: <span id="time">0</span>s</p>
+                    <p>Errors: <span id="errors">0</span></p>
+                    <p>Words per minute: <span id="wpm">0</span></p>
+                </div>
+            </div>
+    </section>
+
+    <!-- Place the #results div to the right on medium screens and above -->
+    <div class="row">
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
