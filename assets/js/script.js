@@ -93,10 +93,40 @@ document.addEventListener('DOMContentLoaded', function() {
         levelDisplay.textContent = difficultySelect.value.charAt(0).toUpperCase() + difficultySelect.value.slice(1); // Display the difficulty level
     }
 
+    // Function to provide visual feedback on typing accuracy
+    function provideVisualFeedback() {
+        const sampleText = sampleTextDiv.textContent;
+        const userText = userInput.value.trim();
+        const sampleWords = sampleText.split(' ');
+        const userWords = userText.split(' ');
+
+        let feedbackHTML = '';
+        for (let i = 0; i < sampleWords.length; i++) {
+            if (userWords[i] === sampleWords[i]) {
+                feedbackHTML += `<span class="correct-word">${sampleWords[i]}</span> `;
+            } else {
+                feedbackHTML += `<span class="incorrect-word">${sampleWords[i]}</span> `;
+            }
+        }
+
+        sampleTextDiv.innerHTML = feedbackHTML.trim();
+    }
+
     // Add event listeners to the difficulty select, start button, and stop button
     difficultySelect.addEventListener('change', updateSampleText);
     startButton.addEventListener('click', startTest);
     stopButton.addEventListener('click', stopTest);
+
+    // Add event listener to the user input area to stop the test on Enter key press
+    userInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent the default action of the Enter key
+            stopTest(); // Trigger the stopTest function
+        }
+    });
+
+    // Add event listener to the user input area to provide visual feedback on input
+    userInput.addEventListener('input', provideVisualFeedback);
 
     // Initialize with a random text from the default difficulty level
     updateSampleText();
