@@ -1,42 +1,42 @@
-:root {
-    --orange: #ff8400;
+/* fonts */
+@import url("https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&family=Nunito:wght@400;700&display=swap");
+
+body {
+    font-family: Nunito, sans-serif;
 }
 
-/* Fonts */
-
-.alegreya-primary {
-  font-family: "Alegreya", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+h1 {
+    font-family: Alegreya, serif;
 }
 
-.nunito-secondary {
-  font-family: "Nunito", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* Navbar */
-
-.navbar {
-    background-color: var(--orange);
+header {
+    background-color: #ff8400;
     color: white;
 }
 
-/* Results box */
+/* buttons */
 
-#results {
-    border: 2px solid var(--orange);
-    border-radius: 10px;
-    box-shadow: 0 0 10px var(--orange);
-    padding: 10px;
+.btn-outline-orange {
+    border: 2px solid #ff8400;
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    margin: 5px;
 }
 
-/* Buttons */
+.btn-outline-orange:hover {
+    background-color: #ff8400;
+    color: #fff;
+}
 
-.btn-custom {
-  background-color: white;
-  border-color: var(--orange);
+
+/* results-area */
+
+#results-area {
+    box-shadow: 0 0 10px #ff8400;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+#results-area p {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
 }
